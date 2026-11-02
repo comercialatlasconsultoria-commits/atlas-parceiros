@@ -6,5 +6,6 @@ Páginas de indicação de parceiros da Atlas Consultoria Digital, publicadas em
 | Caminho | Parceiro |
 |---|---|
 | `/gabrielvalle/` | Gabriel Valle |
+| `/fv/` | Redirecionamento: protótipo do site da FV Enxovais (revisão do cliente) |
 
 Os arquivos aqui são a versão publicada (CSS e JS minificados). O código-fonte e a documentação ficam no repositório privado `LP_Gabriel-Valle`.
