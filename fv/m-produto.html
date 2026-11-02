@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>FV Enxovais · 5.3 · Celular · Produto e carrinho</title>
+<link rel="icon" href="assets/symbol.svg">
+<link rel="stylesheet" href="ds/tokens.css">
+<link rel="stylesheet" href="ds/bundle.css">
+<style>html,body{height:100%}#fv-root{height:100%}</style>
+</head>
+<body data-pagina="m-produto" data-titulo="5.3 · Celular · Produto e carrinho">
+<div id="fv-root"></div>
+<template id="fv-tpl-MobileProduto">
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#ffffff}
+a{color:#243b49}
+@keyframes fvup{from{transform:translateY(100%)}to{transform:none}}
+.fv-up{animation:fvup .26s ease-out}
+@keyframes fvkb{from{transform:scale(1)}to{transform:scale(1.18)}}
+.fv-kb{animation:fvkb 6s ease-in-out infinite alternate}
+@keyframes fvprog{from{width:0}to{width:100%}}
+.fv-prog{animation:fvprog 6s linear infinite}
+.fv-hs{scrollbar-width:none}
+.fv-hs::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; overflow: hidden; background: #ffffff; font-family: var(--font-brand); color: #243b49;">
+<div class="fv-hs" style="height: 100%; overflow-y: auto; padding-bottom: 92px; box-sizing: border-box;">
+
+  <header style="position: sticky; top: 0; z-index: 5; background: #ffffff; border-bottom: 1px solid #e8e1de; display: flex; align-items: center; justify-content: space-between; padding: 6px 8px;">
+    <a href="m-colecao.html" aria-label="Voltar" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <a href="m-home.html" style="display: flex;"><img src="assets/logo-horizontal.svg" alt="FV Enxovais" style="height: 34px; width: auto;"></a>
+    <button aria-label="Abrir carrinho" onClick="{{openCart}}" style="position: relative; width: 44px; height: 44px; border: 0; background: transparent; color: #243b49; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l-1.2 10.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7Z"></path><path d="M9 7V6a3 3 0 0 1 6 0v1"></path></svg>
+      <sc-if value="{{hasCart}}" hint-placeholder-val="{{no}}"><span style="position: absolute; top: 4px; right: 2px; min-width: 18px; height: 18px; border-radius: 999px; background: #806375; color: #ffffff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">{{cartCount}}</span></sc-if>
+    </button>
+  </header>
+
+  <!-- Galeria -->
+  <div style="position: relative; aspect-ratio: 1 / 1; background: {{slideBg}}; overflow: hidden;">
+    <sc-if value="{{isCover}}" hint-placeholder-val="{{yes}}">
+      <div style="position: absolute; left: 14%; right: 14%; top: 38%; height: 16%; border-radius: 12px; background: {{color}}; opacity: 0.85;"></div>
+      <div style="position: absolute; left: 10%; right: 10%; top: 51%; height: 19%; border-radius: 12px; background: {{color}}; box-shadow: 0 16px 34px rgba(36,59,73,0.14);"></div>
+    </sc-if>
+    <span class="fv-badge fv-badge--best" style="position: absolute; top: 12px; left: 12px;">Mais vendido</span>
+    <span style="position: absolute; left: 12px; bottom: 36px; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #243b49; background: rgba(255,255,255,0.88); border-radius: 8px; padding: 5px 8px;">{{slideLabel}}</span>
+    <button aria-label="Foto anterior" onClick="{{prev}}" style="position: absolute; left: 8px; top: 50%; margin-top: -22px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: rgba(255,255,255,0.9); color: #243b49; display: flex; align-items: center; justify-content: center; cursor: pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+    <button aria-label="Próxima foto" onClick="{{next}}" style="position: absolute; right: 8px; top: 50%; margin-top: -22px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: rgba(255,255,255,0.9); color: #243b49; display: flex; align-items: center; justify-content: center; cursor: pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+    <div style="position: absolute; left: 0; right: 0; bottom: 12px; display: flex; justify-content: center; gap: 6px;">
+      <sc-for list="{{dots}}" as="d" hint-placeholder-count="5"><span style="height: 6px; border-radius: 999px; {{d}}"></span></sc-for>
+    </div>
+  </div>
+
+  <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 18px;">
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <h1 style="margin: 0; font-size: 22px; line-height: 1.25; font-weight: 600;">Jogo de Cama 4 Peças Toque de Seda</h1>
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+        <span class="fv-badge" style="background: #806375; color: #ffffff;">Mais vendido</span>
+        <a href="m-colecao.html" style="font-size: 12px; font-weight: 600; color: #806375; text-decoration: none;">3º em Jogos de cama</a>
+      </div>
+      <a href="#avaliacoes-m" style="font-size: 12px; color: #55687a; text-decoration: none;"><b style="color: #243b49;">4,8</b> <span style="color: #806375; letter-spacing: 1px;">★★★★★</span> (<u>312</u>)</a>
+    </div>
+
+    <div style="border: 2px solid #e7c8c6; border-radius: 12px; overflow: hidden; background: #fffaf9;">
+      <div style="padding: 7px 14px; background: #e7c8c6; font-size: 12px; font-weight: 700; color: #243b49;">Parcelado sem juros em até 6x</div>
+      <div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 3px;">
+        <s style="font-size: 13px; color: #55687a;">{{oldPrice}}</s>
+        <div style="display: flex; align-items: baseline; gap: 8px;"><b style="font-size: 30px; line-height: 1.1;">{{price}}</b><span style="font-size: 14px; font-weight: 700; color: #2f6b4f;">{{discountOff}}</span></div>
+        <span style="font-size: 14px;">em <b>{{inst}}</b> sem juros</span>
+        <div style="margin-top: 10px; display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 10px; background: #0e7c72; color: #ffffff;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M12 3l9 9-9 9-9-9z"></path><path d="M8.5 12h7"></path></svg>
+          <span style="flex: 1; font-size: 21px; font-weight: 700; line-height: 1.1;">{{pix}} <span style="font-size: 13px; font-weight: 600;">no Pix</span></span>
+          <span style="flex: none; padding: 5px 9px; border-radius: 999px; background: #ffffff; color: #0e7c72; font-size: 12px; font-weight: 700;">−{{pixSave}}</span>
+        </div>
+      </div>
+    </div>
+
+    <button onClick="{{capToggle}}" aria-pressed="{{capPressed}}" style="width: 100%; text-align: left; font-family: inherit; color: #243b49; cursor: pointer; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; {{capBoxStyle}}">
+      <span style="width: 24px; height: 24px; flex: none; border-radius: 6px; display: flex; align-items: center; justify-content: center; {{capCheckStyle}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4.5 4.5L19 7"></path></svg></span>
+      <span style="flex: 1; display: flex; flex-direction: column; gap: 3px;">
+        <span style="font-size: 14px;"><b>Quero meu cupom: +5% OFF</b> na 1ª compra</span>
+        <span style="font-size: 12px; line-height: 1.4; color: #4e6170;">{{capHint}}</span>
+      </span>
+    </button>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 13px; color: #55687a;">Cor: <b style="color: #243b49;">{{colorName}}</b></span>
+      <div class="fv-hs" style="display: flex; gap: 8px; overflow-x: auto;">
+        <sc-for list="{{colors}}" as="c" hint-placeholder-count="5">
+          <button aria-label="{{c.name}}" aria-pressed="{{c.pressed}}" onClick="{{c.pick}}" style="flex: none; width: 54px; height: 54px; padding: 4px; border-radius: 10px; cursor: pointer; background: #ffffff; {{c.ring}}"><span style="display: block; width: 100%; height: 100%; border-radius: 7px; background: {{c.hex}}; box-shadow: inset 0 0 0 1px rgba(36,59,73,0.12);"></span></button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 13px; color: #55687a;">Tamanho: <b style="color: #243b49;">{{sizeName}}</b> <a href="#" style="margin-left: 6px; font-weight: 600; color: #806375;">Guia de medidas</a></span>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+        <sc-for list="{{sizes}}" as="s" hint-placeholder-count="3">
+          <button class="fv-chip" aria-pressed="{{s.pressed}}" aria-disabled="{{s.disabled}}" onClick="{{s.pick}}" style="font-family: inherit; min-width: 0;">{{s.label}}<small>{{s.sub}}</small></button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <label for="cep-m" style="font-size: 14px; font-weight: 600;">Calcule o frete</label>
+      <div style="display: flex; gap: 8px;">
+        <input id="cep-m" inputmode="numeric" placeholder="00000-000" value="{{cep}}" onChange="{{onCep}}" style="flex: 1; min-width: 0; min-height: 48px; padding: 0 12px; border: 1.5px solid #788fa1; border-radius: 8px; font-family: inherit; font-size: 16px; color: #243b49;">
+        <button class="fv-btn fv-btn--secondary" onClick="{{calcShip}}" style="font-family: inherit; padding: 0 16px;">OK</button>
+      </div>
+      <sc-if value="{{shipShown}}" hint-placeholder-val="{{no}}">
+        <div style="border: 1px solid #e8e1de; border-radius: 8px; font-size: 13px;">
+          <div style="display: flex; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid #e8e1de;"><span>Econômico · 5 a 8 dias úteis</span><b style="{{freeStyle}}">{{econ}}</b></div>
+          <div style="display: flex; justify-content: space-between; padding: 10px 12px;"><span>Expresso · 2 a 4 dias úteis</span><b>R$ 29,90</b></div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="display: flex; flex-direction: column; border-top: 1px solid #e8e1de;">
+      <sc-for list="{{accordion}}" as="a" hint-placeholder-count="4">
+        <div style="border-bottom: 1px solid #e8e1de;">
+          <button aria-expanded="{{a.expanded}}" onClick="{{a.toggle}}" style="width: 100%; min-height: 52px; display: flex; justify-content: space-between; align-items: center; border: 0; background: transparent; padding: 0; font-family: inherit; font-size: 15px; font-weight: 600; color: #243b49; cursor: pointer; text-align: left;">{{a.title}}<span aria-hidden="true" style="font-size: 20px; font-weight: 400;">{{a.sign}}</span></button>
+          <sc-if value="{{a.open}}" hint-placeholder-val="{{no}}"><div style="padding: 0 0 14px; font-size: 13px; line-height: 1.6; color: #3b4f5c; white-space: pre-line;">{{a.body}}</div></sc-if>
+        </div>
+      </sc-for>
+    </div>
+
+    <div id="avaliacoes-m" style="display: flex; flex-direction: column; gap: 10px;">
+      <b style="font-size: 18px;">Avaliações</b>
+      <span style="font-size: 14px;"><b style="font-size: 28px;">4,8</b> <span style="color: #806375;">★★★★★</span> · 312 avaliações</span>
+      <div style="padding: 14px; border-radius: 12px; border: 1px solid #e8e1de; font-size: 13px; line-height: 1.55; color: #3b4f5c;">Texto da avaliação do cliente, importado do app de avaliações.<br><span style="font-size: 11px; color: #55687a;">[Nome] · Queen · compra verificada</span></div>
+      <a href="#" style="font-size: 14px; font-weight: 600; color: #806375;">Ver todas →</a>
+    </div>
+  </div>
+</div>
+
+<!-- Vídeo flutuante: fica visível enquanto o cliente rola a página -->
+<sc-if value="{{floatOn}}" hint-placeholder-val="{{yes}}">
+  <div style="position: absolute; right: 14px; bottom: 100px; z-index: 7; width: 92px;">
+    <button aria-label="Ver os 4 vídeos de quem usa este produto" onClick="{{openVideos}}" style="position: relative; display: block; width: 92px; aspect-ratio: 9 / 16; border: 3px solid #ffffff; border-radius: 14px; padding: 0; overflow: hidden; cursor: pointer; background: #e9dcd9; box-shadow: 0 10px 26px rgba(36,59,73,0.32);">
+      <span class="fv-kb" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;"><img src="assets/symbol.svg" alt="" aria-hidden="true" style="width: 50%; opacity: 0.2;"></span>
+      <span style="position: absolute; left: 0; right: 0; bottom: 0; padding: 6px 6px 9px; background: rgba(36,59,73,0.78); color: #ffffff; font-size: 10px; font-weight: 600; text-align: left;">▶ 4 vídeos</span>
+      <span class="fv-prog" style="position: absolute; left: 0; bottom: 0; height: 3px; background: #e7c8c6;"></span>
+    </button>
+    <button aria-label="Fechar vídeo" onClick="{{closeFloat}}" style="position: absolute; top: -10px; left: -10px; width: 28px; height: 28px; border-radius: 999px; border: 2px solid #ffffff; background: #243b49; color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+  </div>
+</sc-if>
+
+<!-- Biblioteca de vídeos -->
+<sc-if value="{{videosOpen}}" hint-placeholder-val="{{no}}">
+  <div class="fv-up" role="dialog" aria-label="Vídeos de quem usa o produto" style="position: absolute; inset: 0; z-index: 25; background: #142028; color: #ffffff; display: flex; flex-direction: column;">
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 8px 8px 16px;">
+      <b style="font-size: 16px;">Quem usa, ama · {{vidCount}}</b>
+      <button aria-label="Fechar" onClick="{{closeVideos}}" style="width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; color: #ffffff; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    </div>
+    <div style="position: relative; flex: 1; margin: 0 12px; border-radius: 16px; overflow: hidden; background: {{vidBg}}; display: flex; align-items: center; justify-content: center;">
+      <span style="position: absolute; top: 12px; left: 12px; font-size: 12px; font-weight: 600; color: #243b49; background: rgba(255,255,255,0.9); border-radius: 999px; padding: 4px 10px;">@[perfil]</span>
+      <span style="width: 64px; height: 64px; border-radius: 999px; background: rgba(255,255,255,0.92); color: #243b49; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span>
+      <button aria-label="Vídeo anterior" onClick="{{vidPrev}}" style="position: absolute; left: 8px; top: 50%; margin-top: -22px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: rgba(255,255,255,0.85); color: #243b49; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+      <button aria-label="Próximo vídeo" onClick="{{vidNext}}" style="position: absolute; right: 8px; top: 50%; margin-top: -22px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: rgba(255,255,255,0.85); color: #243b49; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+    </div>
+    <div style="margin: 12px; padding: 10px; border-radius: 14px; background: #ffffff; color: #243b49; display: flex; align-items: center; gap: 10px;">
+      <span style="width: 48px; height: 48px; border-radius: 8px; background: {{color}}; flex: none; box-shadow: inset 0 0 0 1px rgba(36,59,73,0.12);"></span>
+      <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;"><span style="font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Jogo de Cama Toque de Seda · {{sizeName}}</span><b style="font-size: 15px;">{{price}}</b></span>
+      <button class="fv-btn fv-btn--primary" onClick="{{addToCart}}" style="font-family: inherit; min-height: 44px; padding: 0 14px; font-size: 14px;">Comprar</button>
+    </div>
+  </div>
+</sc-if>
+
+<!-- Barra de compra fixa -->
+<div style="position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; background: #ffffff; box-shadow: 0 -4px 16px rgba(36,59,73,0.10); padding: 12px 16px 16px; display: flex; align-items: center; gap: 12px;">
+  <div style="display: flex; flex-direction: column; min-width: 0;">
+    <b style="font-size: 18px;">{{price}}</b>
+    <span style="font-size: 11px; color: #55687a; white-space: nowrap;">{{pix}} no Pix</span>
+  </div>
+  <sc-if value="{{available}}" hint-placeholder-val="{{yes}}">
+    <button class="fv-btn fv-btn--primary" onClick="{{addToCart}}" style="font-family: inherit; flex: 1; min-height: 52px;">Adicionar ao carrinho</button>
+  </sc-if>
+  <sc-if value="{{unavailable}}" hint-placeholder-val="{{no}}">
+    <button class="fv-btn fv-btn--secondary" style="font-family: inherit; flex: 1; min-height: 52px; font-size: 14px;">Avise-me no WhatsApp</button>
+  </sc-if>
+</div>
+
+<!-- Carrinho (tela cheia) -->
+<sc-if value="{{cartOpen}}" hint-placeholder-val="{{no}}">
+  <div class="fv-up" role="dialog" aria-label="Carrinho" style="position: absolute; inset: 0; z-index: 20; background: #ffffff; display: flex; flex-direction: column;">
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 8px 8px 20px; border-bottom: 1px solid #e8e1de;">
+      <b style="font-size: 20px; display: flex; align-items: center; gap: 8px;">Carrinho <span style="min-width: 24px; height: 24px; border-radius: 999px; background: #806375; color: #ffffff; font-size: 13px; display: inline-flex; align-items: center; justify-content: center;">{{cartCount}}</span></b>
+      <button aria-label="Fechar" onClick="{{closeCart}}" style="width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; color: #243b49; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    </div>
+    <!-- Barra de benefícios em degraus -->
+    <div style="padding: 12px 16px 6px; background: #fbf6f5; display: flex; flex-direction: column; gap: 12px;">
+      <span style="font-size: 13px; line-height: 1.4; text-align: center;">{{tierMsgA}}<b style="color: #2f6b4f;">{{tierMsgB}}</b>{{tierMsgC}}</span>
+      <div style="position: relative; height: 7px; margin: 0 34px 0 14px; border-radius: 999px; background: #e8e1de;">
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; background: #806375; width: {{tierPct}};"></div>
+        <span style="position: absolute; top: 50%; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 999px; display: flex; align-items: center; justify-content: center; {{tier1Dot}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"></path><circle cx="7" cy="17.5" r="1.6"></circle><circle cx="17.5" cy="17.5" r="1.6"></circle></svg></span>
+        <span style="position: absolute; top: 50%; left: 100%; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 999px; display: flex; align-items: center; justify-content: center; {{tier2Dot}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="9" width="16" height="11" rx="1.5"></rect><path d="M3 9h18M12 9v11M12 9c-1.5-3-5-4-5-1.5S10 9 12 9zM12 9c1.5-3 5-4 5-1.5S14 9 12 9z"></path></svg></span>
+      </div>
+      <div style="position: relative; height: 28px; margin: 0 34px 0 14px; font-size: 10px; line-height: 1.3; color: #4e6170;">
+        <span style="position: absolute; transform: translateX(-50%); text-align: center; white-space: nowrap; {{tier1Left}}"><b style="color: #243b49;">Frete grátis</b><br>{{freeLabel}}</span>      </div>
+      <sc-if value="{{needCep}}" hint-placeholder-val="{{yes}}">
+        <div style="display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 10px; background: #ffffff; border: 1px solid #e8e1de;">
+          <label for="cep-cart-m" style="font-size: 11px; line-height: 1.35; color: #4e6170; flex: 1;">Informe o CEP para ver o frete grátis da sua região</label>
+          <input id="cep-cart-m" inputmode="numeric" placeholder="00000-000" value="{{cep}}" onChange="{{onCep}}" style="width: 104px; min-height: 40px; padding: 0 8px; border: 1.5px solid #788fa1; border-radius: 8px; font-family: inherit; font-size: 15px; color: #243b49;">
+        </div>
+      </sc-if>
+      <sc-if value="{{hasCep}}" hint-placeholder-val="{{no}}">
+        <span style="font-size: 11px; text-align: center; color: #4e6170;">{{regionNote}}</span>
+      </sc-if>
+    </div>
+    <div style="flex: 1; overflow-y: auto; padding: 0 16px 12px;">
+      <sc-for list="{{cartLines}}" as="l" hint-placeholder-count="1">
+        <div style="display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid #e8e1de;">
+          <span style="width: 72px; height: 72px; border-radius: 10px; background: {{l.color}}; flex: none; box-shadow: inset 0 0 0 1px rgba(36,59,73,0.10);"></span>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+            <div style="display: flex; justify-content: space-between; gap: 6px;">
+              <span style="font-size: 13px; font-weight: 600; line-height: 1.35;">{{l.name}}</span>
+              <button aria-label="Remover {{l.name}}" onClick="{{l.remove}}" style="flex: none; width: 32px; height: 32px; margin: -6px -6px 0 0; border: 0; background: transparent; color: #55687a; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg></button>
+            </div>
+            <span style="font-size: 11px; color: #55687a;">{{l.variant}}</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 6px;">
+              <div style="display: flex; align-items: center; border: 1.5px solid #788fa1; border-radius: 8px;">
+                <button aria-label="Diminuir" onClick="{{l.dec}}" style="width: 32px; height: 32px; border: 0; background: transparent; font-size: 17px; color: #243b49; cursor: pointer;">−</button>
+                <span style="min-width: 20px; text-align: center; font-size: 13px; font-weight: 600;">{{l.qty}}</span>
+                <button aria-label="Aumentar" onClick="{{l.inc}}" style="width: 32px; height: 32px; border: 0; background: transparent; font-size: 17px; color: #243b49; cursor: pointer;">+</button>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                <span style="font-size: 11px; color: #55687a; text-decoration: line-through;">{{l.old}}</span>
+                <span style="font-size: 15px; font-weight: 700; color: #0e7c72;">{{l.pix}} <span style="font-size: 10px;">NO PIX</span></span>
+                <span style="font-size: 11px; color: #55687a;">ou {{l.total}} no cartão</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+      <sc-if value="{{hasCoupon}}" hint-placeholder-val="{{no}}">
+        <div style="margin-top: 12px; padding: 9px 11px; border-radius: 10px; border: 1.5px dashed #806375; background: #fbf6f5; font-size: 12px; line-height: 1.4;"><b>Cupom +5% OFF garantido.</b> Aplicado no checkout com o e-mail da 1ª compra.</div>
+      </sc-if>
+      <sc-if value="{{hasUpsellItem}}" hint-placeholder-val="{{yes}}">
+        <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <b style="font-size: 14px;">Leve mais por menos</b>
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <span style="font-size: 11px; color: #55687a; margin-right: 2px;">{{upCount}}</span>
+              <button aria-label="Sugestão anterior" onClick="{{upPrev}}" style="width: 32px; height: 32px; border-radius: 999px; border: 1.5px solid #788fa1; background: #ffffff; color: #243b49; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+              <button aria-label="Próxima sugestão" onClick="{{upNext}}" style="width: 32px; height: 32px; border-radius: 999px; border: 1.5px solid #788fa1; background: #ffffff; color: #243b49; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center; padding: 10px; border-radius: 12px; background: #f5f2ee;">
+            <span style="width: 56px; height: 56px; border-radius: 8px; background: {{up.color}}; flex: none; box-shadow: inset 0 0 0 1px rgba(36,59,73,0.10);"></span>
+            <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+              <span style="font-size: 12px; line-height: 1.3; font-weight: 600;">{{up.name}}</span>
+              <span style="font-size: 12px;"><s style="color: #55687a;">{{up.old}}</s> <b>{{up.price}}</b></span>
+              <span style="align-self: flex-start; font-size: 10px; font-weight: 700; color: #ffffff; background: #2f6b4f; border-radius: 5px; padding: 1px 6px;">{{up.off}}</span>
+            </div>
+            <button class="fv-btn fv-btn--primary" aria-label="Adicionar {{up.name}}" onClick="{{up.add}}" style="font-family: inherit; min-height: 44px; padding: 0 12px; font-size: 13px;">+ Add</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+    <div style="padding: 12px 16px 16px; border-top: 1px solid #e8e1de; display: flex; flex-direction: column; gap: 5px; font-size: 13px;">
+      <div style="display: flex; justify-content: space-between;"><span>Subtotal</span><span>{{subtotal}}</span></div>
+      <div style="display: flex; justify-content: space-between; color: #2f6b4f; font-weight: 600;"><span>Desconto no Pix (5%)</span><span>−{{pixDisc}}</span></div>
+      <div style="display: flex; justify-content: space-between;"><span>Frete</span><span style="{{freteStyle}}">{{freteLabel}}</span></div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 6px; border-top: 1px solid #e8e1de;"><b style="font-size: 14px;">Total no Pix</b><b style="font-size: 20px; color: #0e7c72;">{{subtotalPix}}</b></div>
+      <span style="font-size: 11px; color: #55687a; text-align: right;">ou {{subtotal}} em {{subtotalInst}} sem juros</span>
+      <button class="fv-btn fv-btn--primary fv-btn--block" style="font-family: inherit; min-height: 52px; margin-top: 4px;">Finalizar compra</button>
+      <span style="text-align: center; font-size: 11px; color: #55687a;">Checkout seguro · Pix, cartão ou boleto</span>
+    </div>
+  </div>
+</sc-if>
+</div>
+</template>
+<script type="text/plain" id="fv-js-MobileProduto">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { color: 0, size: 1, slide: 0, acc: -1, ship: false, cartOpen: false, cart: [], floatOn: true, videosOpen: false, vid: 0, cap: 0, up: 0, cep: '' };
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    function brl(v) { return 'R$ ' + v.toFixed(2).replace('.', ','); }
+    var colorDefs = [{ name: 'Rosa Blush', hex: '#e7c8c6' }, { name: 'Areia', hex: '#c7b9b0' }, { name: 'Azul Bebê', hex: '#a9cfe6' }, { name: 'Branco', hex: '#ffffff' }, { name: 'Marinho', hex: '#243b49' }];
+    var sizeDefs = [{ label: 'Casal', sub: '138 × 188', price: 169.9, old: 229.9 }, { label: 'Queen', sub: '158 × 198', price: 189.9, old: 249.9 }, { label: 'King', sub: '193 × 203', price: 219.9, old: 289.9 }];
+    var soldOut = function (c, s) { return c === 4 && s === 2; };
+    var col = colorDefs[st.color], sz = sizeDefs[st.size], price = sz.price;
+    var slides = [
+      { label: 'Capa · fundo off-white', bg: '#f6f2ee' }, { label: 'Cama montada, sol da manhã', bg: '#ead8d6' },
+      { label: 'Close da textura', bg: '#ebe5e1' }, { label: 'Elástico no colchão', bg: '#e6e9ec' }, { label: 'Etiqueta e embalagem', bg: '#efe9e4' }
+    ];
+    var si = st.slide;
+    var cart = st.cart, subtotal = 0, count = 0;
+    var cartLines = cart.map(function (l, i) {
+      subtotal += l.unit * l.qty; count += l.qty;
+      var t = l.unit * l.qty;
+      return {
+        name: l.name, variant: l.variant, color: l.color, qty: l.qty, total: brl(t),
+        old: l.old ? brl(l.old * l.qty) : '',
+        pix: brl(Math.floor(t * 95) / 100),
+        remove: function () { var c = self.state.cart.slice(); c.splice(i, 1); self.setState({ cart: c }); },
+        inc: function () { var c = self.state.cart.slice(); c[i] = Object.assign({}, c[i], { qty: c[i].qty + 1 }); self.setState({ cart: c }); },
+        dec: function () { var c = self.state.cart.slice(); if (c[i].qty > 1) { c[i] = Object.assign({}, c[i], { qty: c[i].qty - 1 }); } else { c.splice(i, 1); } self.setState({ cart: c }); }
+      };
+    });
+    var cepDigits = (st.cep || '').replace(/\D/g, '');
+    var hasCep = cepDigits.length === 8;
+    var southSE = hasCep ? '012389'.indexOf(cepDigits.charAt(0)) >= 0 : true;
+    var FREE = southSE ? 199 : 249, GIFT = 299;
+    var upAll = [
+      { id: 'softy', name: 'Kit 2 Travesseiros Softy 50 × 70', variant: 'Branco · 50 × 70 cm', color: '#f4f1ee', unit: 69.9, old: 79.9 },
+      { id: 'fronhas', name: 'Par de Fronhas Toque de Seda', variant: 'Rosa Blush', color: '#e7c8c6', unit: 29.9, old: 39.9 },
+      { id: 'saia', name: 'Saia Box Matelada Queen', variant: 'Branco · Queen', color: '#ffffff', unit: 79.9, old: 89.9 }
+    ];
+    var upList = upAll.filter(function (u) { return !cart.some(function (l) { return l.id === u.id; }); });
+    var upI = upList.length ? st.up % upList.length : 0;
+    var upItem = upList[upI];
+    var accDefs = [
+      { title: 'Detalhes do produto', body: 'Tecido [composição], toque acetinado.\nCor: ' + col.name + ' · ' + sz.label },
+      { title: 'O que vem no jogo', body: '1 lençol de elástico · 1 lençol de cima · 2 fronhas 50 × 70 cm\nServe em colchões de até [X] cm de altura.' },
+      { title: 'Lavagem e cuidados', body: 'Água fria, sem alvejante, secar à sombra.' },
+      { title: 'Trocas e devoluções', body: '[Política de troca FV]' }
+    ];
+    return {
+      yes: true, no: false,
+      color: col.hex, colorName: col.name, sizeName: sz.label,
+      slideBg: slides[si].bg, slideLabel: slides[si].label, isCover: si === 0,
+      prev: function () { self.setState({ slide: (si + 4) % 5 }); },
+      next: function () { self.setState({ slide: (si + 1) % 5 }); },
+      dots: slides.map(function (s, i) { return i === si ? 'width:18px;background:#243b49;' : 'width:6px;background:rgba(36,59,73,0.3);'; }),
+      colors: colorDefs.map(function (c, i) { return { name: c.name, hex: c.hex, pressed: i === st.color ? 'true' : 'false', ring: i === st.color ? 'border:2px solid #806375;' : 'border:1.5px solid #e8e1de;', pick: function () { self.setState({ color: i, slide: 0 }); } }; }),
+      sizes: sizeDefs.map(function (s, i) { var out = soldOut(st.color, i); return { label: s.label, sub: out ? 'esgotado' : s.sub, pressed: i === st.size ? 'true' : 'false', disabled: out ? 'true' : 'false', pick: function () { self.setState({ size: i }); } }; }),
+      oldPrice: brl(sz.old), price: brl(price), discount: '-' + Math.round((1 - price / sz.old) * 100) + '%',
+      discountOff: Math.round((1 - price / sz.old) * 100) + '% OFF',
+      pixSave: brl(price - Math.floor(price * 95) / 100),
+      floatOn: st.floatOn && !st.cartOpen && !st.videosOpen,
+      closeFloat: function () { self.setState({ floatOn: false }); },
+      openVideos: function () { self.setState({ videosOpen: true }); },
+      closeVideos: function () { self.setState({ videosOpen: false }); },
+      videosOpen: st.videosOpen,
+      vidBg: ['#e9dcd9', '#e4e9ec', '#e6ded7', '#ebe3dd'][st.vid],
+      vidCount: (st.vid + 1) + ' / 4',
+      vidPrev: function () { self.setState({ vid: (st.vid + 3) % 4 }); },
+      vidNext: function () { self.setState({ vid: (st.vid + 1) % 4 }); },
+      capPressed: st.cap ? 'true' : 'false',
+      capToggle: function () { self.setState({ cap: self.state.cap ? 0 : 1 }); },
+      capBoxStyle: st.cap ? 'background: #fbf6f5; border: 2px solid #806375;' : 'background: #ecf7fd; border: 2px dashed #788fa1;',
+      capCheckStyle: st.cap ? 'background: #806375; border: 2px solid #806375;' : 'background: #ffffff; border: 2px solid #788fa1;',
+      capHint: st.cap ? 'Garantido! No Pix fica ' + brl(Math.floor(Math.floor(price * 95) / 100 * 95) / 100) + '. Aplicado no checkout com o e-mail da 1ª compra.' : 'Marque para garantir. O desconto entra no checkout.',
+      pix: brl(Math.floor(price * 95) / 100), inst: '6x de ' + brl(Math.ceil(price / 6 * 100) / 100),
+      available: !soldOut(st.color, st.size), unavailable: soldOut(st.color, st.size),
+      shipShown: st.ship, calcShip: function () { self.setState({ ship: true }); },
+      econ: price >= FREE ? 'Grátis' : 'R$ 18,90', freeStyle: price >= FREE ? 'color:#2f6b4f;' : '',
+      cep: st.cep || '',
+      onCep: function (e) { self.setState({ cep: e.target.value }); },
+      tier1Left: 'left: 100%;',
+      freeLabel: 'R$ ' + FREE,
+      needCep: !hasCep,
+      hasCep: hasCep,
+      regionNote: hasCep ? (southSE ? 'Sul e Sudeste: frete grátis a partir de R$ 199' : 'Centro-Oeste, Norte e Nordeste: frete grátis a partir de R$ 249') : '',
+      videos: ['#e9dcd9', '#e4e9ec', '#e6ded7', '#ebe3dd'],
+      accordion: accDefs.map(function (a, i) { var o = i === st.acc; return { title: a.title, body: a.body, open: o, expanded: o ? 'true' : 'false', sign: o ? '−' : '+', toggle: function () { self.setState({ acc: o ? -1 : i }); } }; }),
+      addToCart: function () {
+        var key = 'j-' + st.color + '-' + st.size, c = self.state.cart.slice();
+        var idx = c.findIndex(function (l) { return l.id === key; });
+        if (idx >= 0) { c[idx] = Object.assign({}, c[idx], { qty: c[idx].qty + 1 }); } else { c.push({ id: key, name: 'Jogo de Cama 4 Peças Toque de Seda', variant: col.name + ' · ' + sz.label, color: col.hex, unit: price, old: sz.old, qty: 1 }); }
+        self.setState({ cart: c, cartOpen: true, videosOpen: false });
+      },
+      cartOpen: st.cartOpen,
+      openCart: function () { self.setState({ cartOpen: true }); },
+      closeCart: function () { self.setState({ cartOpen: false }); },
+      cartLines: cartLines, cartCount: count, hasCart: count > 0,
+      hasUpsellItem: !!upItem,
+      up: upItem ? {
+        name: upItem.name, color: upItem.color, price: brl(upItem.unit), old: brl(upItem.old),
+        off: Math.round((1 - upItem.unit / upItem.old) * 100) + '% OFF',
+        add: function () { var c = self.state.cart.slice(); c.push({ id: upItem.id, name: upItem.name, variant: upItem.variant, color: upItem.color, unit: upItem.unit, old: upItem.old, qty: 1 }); self.setState({ cart: c }); }
+      } : {},
+      upCount: upList.length ? (upI + 1) + ' / ' + upList.length : '',
+      upPrev: function () { self.setState({ up: (upI + upList.length - 1) % Math.max(upList.length, 1) }); },
+      upNext: function () { self.setState({ up: (upI + 1) % Math.max(upList.length, 1) }); },
+      tierMsgA: subtotal < FREE ? 'Faltam ' + brl(FREE - subtotal) + ' para ganhar ' : 'Oba! Você ganhou ',
+      tierMsgB: 'frete grátis',
+      tierMsgC: subtotal < FREE ? (hasCep ? '' : ' no Sul e Sudeste') : '!',
+      tierPct: Math.min(100, subtotal / FREE * 100) + '%',
+      tier1Dot: 'left: 100%; ' + (subtotal >= FREE ? 'background: #806375; color: #ffffff;' : 'background: #ffffff; color: #788fa1; box-shadow: inset 0 0 0 2px #e8e1de;'),
+      tier2Dot: 'display: none;',
+      hasCoupon: !!st.cap,
+      pixDisc: brl(subtotal - Math.floor(subtotal * 95) / 100),
+      freteLabel: subtotal >= FREE ? 'Grátis' : 'Calculado no checkout',
+      freteStyle: subtotal >= FREE ? 'color: #2f6b4f; font-weight: 700;' : 'color: #55687a;',
+      subtotal: brl(subtotal), subtotalPix: brl(Math.floor(subtotal * 95) / 100),
+      subtotalInst: '6x de ' + brl(Math.ceil(subtotal / 6 * 100) / 100)
+    };
+  }
+}
+</script>
+<script src="assets/fv-config.js"></script>
+<script src="assets/fv-runtime.js"></script>
+<script>FVProto.mount("MobileProduto", document.getElementById("fv-root"));</script>
+<script src="assets/fv-comentarios.js"></script>
+</body>
+</html>

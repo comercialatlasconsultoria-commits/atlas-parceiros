@@ -1,5 +1,74 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>FV Enxovais · Protótipo do site</title>
-<meta http-equiv="refresh" content="0; url=https://claude.ai/artifact/NpKyffFGrJ41qmBd4ZHAmL">
-<meta name="robots" content="noindex"></head>
-<body><a href="https://claude.ai/artifact/NpKyffFGrJ41qmBd4ZHAmL">Abrir o protótipo do site da FV Enxovais</a></body></html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>FV Enxovais · Protótipo do site para revisão</title>
+<link rel="icon" href="assets/symbol.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap">
+<style>
+  :root{--ink:#243b49;--muted:#55687a;--line:#e8e1de;--soft:#fbf6f5;--blush:#e7c8c6;--action:#806375}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Sora,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+  header{background:var(--ink);color:#fff;padding:40px 24px 48px}
+  .wrap{max-width:980px;margin:0 auto}
+  header img{height:46px;display:block;margin-bottom:28px}
+  h1{font-size:36px;line-height:1.15;margin:0 0 12px;font-weight:600;letter-spacing:-.01em}
+  header p{margin:0;max-width:640px;color:#d7e0e6;font-size:17px}
+  main{padding:40px 24px 120px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:0 0 40px}
+  .box{border:1px solid var(--line);border-radius:14px;padding:22px}
+  .box h2{font-size:17px;margin:0 0 8px}
+  .box p,.box li{font-size:15px;color:var(--muted);margin:0}
+  .box ul{margin:0;padding-left:18px}
+  .box.ok{background:#eef6f1;border-color:#cfe4d7}
+  .box.no{background:var(--soft);border-color:#efdcda}
+  h2.sec{font-size:22px;margin:0 0 16px}
+  .telas{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .tela{display:flex;flex-direction:column;gap:4px;padding:18px;border-radius:14px;border:1.5px solid var(--line);text-decoration:none;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+  .tela:hover{border-color:var(--action);box-shadow:0 6px 20px rgba(36,59,73,.08)}
+  .tela b{font-size:16px}
+  .tela span{font-size:13px;color:var(--muted)}
+  .tela.first{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .tela.first span{color:#d7e0e6}
+  ol.passos{margin:0 0 40px;padding-left:22px;font-size:16px}
+  ol.passos li{margin-bottom:8px}
+  kbd{font-family:inherit;background:#14212b;color:#fff;border-radius:999px;padding:2px 10px;font-size:13px;white-space:nowrap}
+</style>
+</head>
+<body data-pagina="index" data-titulo="Início · como revisar">
+<header><div class="wrap">
+  <img src="assets/logo-horizontal-white.svg" alt="FV Enxovais">
+  <h1>Protótipo do novo site</h1>
+  <p>Navegue pelas telas como se fosse um cliente comprando e deixe seus comentários direto no ponto da tela sobre o qual quer falar.</p>
+</div></header>
+<main><div class="wrap">
+  <div class="grid">
+    <div class="box ok"><h2>O que estamos validando agora</h2><p>A <b>estrutura</b> do site: a ordem das sessões, o que aparece em cada página e como fica a experiência de compra, da home até o carrinho, no computador e no celular.</p></div>
+    <div class="box no"><h2>O que fica para depois</h2><p>Textos, fotos, nomes de produto, preços e valores de frete são <b>ilustrativos</b>. A redação e as imagens reais entram na construção do site.</p></div>
+  </div>
+
+  <h2 class="sec">Como comentar</h2>
+  <ol class="passos">
+    <li>Abra uma tela abaixo, na ordem numerada.</li>
+    <li>Use a barra no canto inferior da tela: clique em <kbd>+ Comentar</kbd> e depois no ponto exato sobre o qual quer falar.</li>
+    <li>Escreva seu nome (só na primeira vez) e o comentário. Um comentário por assunto ajuda bastante.</li>
+    <li>Para voltar a navegar normalmente, clique de novo no botão ou aperte <kbd>Esc</kbd>. Em <kbd>Comentários</kbd> você vê tudo o que já foi comentado em cada tela.</li>
+  </ol>
+
+  <h2 class="sec">Telas</h2>
+  <div class="telas">
+    <a class="tela first" href="home.html"><b>1 · Home</b><span>Comece por aqui</span></a>
+    <a class="tela" href="colecao.html"><b>2 · Coleção</b><span>Jogos de cama, filtros e grade</span></a>
+    <a class="tela" href="produto.html"><b>3 · Produto</b><span>Inclui o carrinho: clique em “Adicionar ao carrinho”</span></a>
+    <a class="tela" href="produto-landing.html"><b>4 · Produto com landing page</b><span>Versão longa, para produtos especiais</span></a>
+    <a class="tela" href="celular-home.html"><b>5.1 · Celular · Home</b><span>Visualização de celular</span></a>
+    <a class="tela" href="celular-colecao.html"><b>5.2 · Celular · Coleção</b><span>Visualização de celular</span></a>
+    <a class="tela" href="celular-produto.html"><b>5.3 · Celular · Produto e carrinho</b><span>Visualização de celular</span></a>
+  </div>
+</div></main>
+<script src="assets/fv-config.js"></script>
+<script src="assets/fv-comentarios.js"></script>
+</body>
+</html>

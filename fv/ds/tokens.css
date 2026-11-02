@@ -1,0 +1,59 @@
+/* FV Enxovais — generated from tokens.json */
+:root, [data-theme="light"] {
+  --brand-blush-whisper: #e7c8c6;
+  --brand-misty-sand: #c7b9b0;
+  --brand-dusky-plum: #806375;
+  --brand-toasted-almond: #a28f80;
+  --brand-blue-haze: #788fa1;
+  --brand-crystal-baby: #74b3d9;
+  --brand-midnight-tide: #243b49;
+  --brand-cloud-blue: #ecf7fd;
+  --brand-heart-mist: #eeecef;
+  --surface: #ffffff;
+  --surface-soft: #fbf6f5;
+  --surface-cool: var(--brand-cloud-blue);
+  --surface-inverse: var(--brand-midnight-tide);
+  --line: #e8e1de;
+  --line-strong: var(--brand-blue-haze);
+  --ink: var(--brand-midnight-tide);
+  --ink-muted: #55687a;
+  --on-inverse: #ffffff;
+  --action: var(--brand-dusky-plum);
+  --action-hover: #6a5162;
+  --on-action: #ffffff;
+  --accent: var(--brand-crystal-baby);
+  --on-accent: var(--brand-midnight-tide);
+  --promo: var(--brand-blush-whisper);
+  --on-promo: var(--brand-midnight-tide);
+  --success: #2f6b4f;
+  --danger: #a3362e;
+  --focus-ring: var(--brand-midnight-tide);
+  --shadow-card: 0 1px 2px rgba(36,59,73,0.06), 0 4px 16px rgba(36,59,73,0.06);
+  --shadow-sticky: 0 -4px 16px rgba(36,59,73,0.10);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --font-brand: "Heveria", "Sora", system-ui, sans-serif;
+}
+.display { font-family: var(--font-brand); font-size: 48px; line-height: 52px; font-weight: 600; letter-spacing: -0.02em; }
+.h1 { font-family: var(--font-brand); font-size: 34px; line-height: 40px; font-weight: 600; letter-spacing: -0.01em; }
+.h2 { font-family: var(--font-brand); font-size: 26px; line-height: 32px; font-weight: 600; }
+.h3 { font-family: var(--font-brand); font-size: 19px; line-height: 26px; font-weight: 600; }
+.body { font-family: var(--font-brand); font-size: 16px; line-height: 24px; font-weight: 400; }
+.body-sm { font-family: var(--font-brand); font-size: 14px; line-height: 20px; font-weight: 400; }
+.caption { font-family: var(--font-brand); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.04em; }
+.button { font-family: var(--font-brand); font-size: 16px; line-height: 20px; font-weight: 600; }
+.price-lg { font-family: var(--font-brand); font-size: 30px; line-height: 36px; font-weight: 700; }
+.price { font-family: var(--font-brand); font-size: 18px; line-height: 24px; font-weight: 700; }
+.price-old { font-family: var(--font-brand); font-size: 14px; line-height: 20px; font-weight: 400; }
